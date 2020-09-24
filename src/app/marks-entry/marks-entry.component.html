@@ -1,0 +1,102 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12">
+            <h4 class="mt-3 mb-3 mt-5">Marks Entry Form</h4>
+            <form>
+                <fieldset>
+
+                    <div>
+                        <select [(ngModel)]="eId" required type="text" class="form-control" name="Examname" aria-placeholder="select a exam name">
+     
+                            <option *ngFor= "let exam of exams" [value] ="eId">
+                                {{exam.exam_name}}    
+                            </option>
+                     </select>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="sub1">Sub1</label>
+                        <input class="form-control " required type="text " [(ngModel)]="marks.sub1" name="sub1" id="txt " placeholder="Enter subject 1 marks" />
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="sub2">Sub2</label>
+                        <input class="form-control " required type="text " [(ngModel)]="marks.sub2" name="sub2" id="txt " placeholder="Enter subject 2 marks" />
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="sub3">Sub3</label>
+                        <input class="form-control " required type="text " [(ngModel)]="marks.sub3" name="sub3" id="txt " placeholder="Enter subject 3 marks" />
+                    </div>
+
+                    <div class="form-group ">
+                        <input class="btn btn-success " type="submit " name="submit_reg " value="Add Student " (click)="addStudent() ">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+</div> -->
+
+
+<div>
+
+</div>
+<div class="container">
+    <div class="row col-lg-12 col-sm-12">
+
+        <div>
+            <h4 class="  mb-3 mt-5">Add Student Marks </h4>
+        </div>
+
+        <table class="table table-striped mt-5">
+
+            <tr>
+                <div class="mb-3">
+                    <label for="sId">Select Student Name</label>
+                    <select [(ngModel)]="sId" required type="text" class="form-control" name="Sname">
+     
+                        <option *ngFor= "let Student of students" [value] ="Student.id">
+                            {{Student.name}}    
+                        </option>
+                 </select>
+                </div>
+                <div class="mb-3">
+                    <label for="eId">Select Exam Name</label>
+                    <select [(ngModel)]="exam_id" required type="text" class="form-control" name="Ename">
+     
+                            <option *ngFor= "let exam of exams" [value] ="exam.id">
+                                {{exam.exam_name}}    
+                            </option>
+                     </select>
+                </div>
+
+
+                <div class="form-group ">
+                    <label for="sub1">Sub1</label>
+                    <input class="form-control " required type="text " [(ngModel)]="marks.sub1" name="sub1" id="txt " placeholder="Enter subject 1 marks" /> {{marks.sub1}}
+                </div>
+
+                <div class="form-group ">
+                    <label for="sub2">Sub2</label>
+                    <input class="form-control " required type="text " [(ngModel)]="marks.sub2" name="sub2" id="txt " placeholder="Enter subject 2 marks" /> {{marks.sub2}}
+                </div>
+
+                <div class="form-group ">
+                    <label for="sub3">Sub3</label>
+                    <input class="form-control " required type="text " [(ngModel)]="marks.sub3" name="sub3" id="txt " placeholder="Enter subject 3 marks" /> {{marks.sub3}}
+                </div>
+
+
+                <div>
+                    <td>
+
+                        <button class="btn btn-primary mt-5 mb-3" style=" margin-left: 20px;" (click)="addStudentMarks()">Add Student Marks</button>
+
+                    </td>
+                </div>
+            </tr>
+        </table>
+    </div>
+</div>

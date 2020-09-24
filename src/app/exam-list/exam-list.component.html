@@ -1,0 +1,28 @@
+<div>
+
+</div>
+<div class="container">
+    <div class="row col-lg-12 col-sm-12">
+        <div>
+
+            <button class="btn btn-secondary mt-5 mb-3" style="margin-right: 20px" (click)="addExam()">Add Exam</button>
+        </div>
+        <h4 class="mt-3 mb-3 mt-5">Exams Data</h4>
+        <table class="table table-striped mt-5">
+            <thead class="bg-info text-light">
+                <tr>
+                    <th class="text-center">Exam ID</th>
+                    <th class="text-center">Name</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Exam of exams">
+                    <td class="text-center">{{Exam.id}}</td>
+                    <td class="text-center">{{Exam.exam_name}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

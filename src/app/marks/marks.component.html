@@ -1,0 +1,30 @@
+<div>
+
+</div>
+<div class="container">
+    <div class="row col-lg-12 col-sm-12">
+
+        <div>
+            <h4 class=" mt-3 mb-3 mt-5">Select Exam Name To Display Marks </h4>
+        </div>
+
+        <table class="table table-striped mt-5">
+
+            <tr>
+                <select [(ngModel)]="exam_id" required type="text" class="form-control" name="name">
+     
+                            <option *ngFor= "let exam of exams" [value] ="exam.id">
+                                {{exam.exam_name}}    
+                            </option>
+                     </select>
+                <div>
+                    <td>
+                        <button class="btn btn-secondary mt-5 mb-3" style=" padding-left: 20px;padding-right: 30px ;margin-right: 20px" (click)="listMarks(exam_id)">select</button>
+                        <button class="btn btn-primary mt-5 mb-3" style=" margin-left: 20px;" (click)="addStudentMarks()">Add Student Marks</button>
+
+                    </td>
+                </div>
+            </tr>
+        </table>
+    </div>
+</div>

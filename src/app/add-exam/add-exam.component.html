@@ -1,0 +1,27 @@
+<!-- <div style="text-align: center">
+    <h3>{{message}}</h3>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12">
+            <h4 class="mt-3 mb-3 mt-5">New Exam</h4>
+            <form>
+                <fieldset>
+
+                    <div class="form-group">
+                        <label for="exam_name">name</label>
+                        <input class="form-control" type="text" [(ngModel)]="exam.exam_name" name="exam_name" id="txt" required placeholder="Enter Exam name" />
+
+                    </div>
+
+
+                    <div class="form-group ">
+                        <input class="btn btn-success " type="submit " name="submit_reg " value="Add Exam " (click)="addExam() ">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+</div>
