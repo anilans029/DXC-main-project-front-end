@@ -34,11 +34,11 @@ export class ExamService {
   }
 
   public listExams(){
-    return this.http.get(this.API_URL+"exams");
+    return this.http.get<Exam[]>(this.API_URL+"exams");
   }
 
   public searchExam(id){
-    return this.http.get(this.API_URL+"exam/"+id);
+    return this.http.get<Exam>(this.API_URL+"exam/"+id);
 
   }
 }

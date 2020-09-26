@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { Student } from './student.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentServiceService {
 
-  API_URL = "http://localhost:8080/api/";
+  API_URL = "http://localhost:8080/";
 
   constructor(private http : HttpClient) {  }
 
@@ -28,11 +29,11 @@ export class StudentServiceService {
   }
 
   public listStudent(){
-    return this.http.get(this.API_URL+"students");
+    return this.http.get<Student[]>(this.API_URL+"students");
   }
 
   public searchStudent(id){
-    return this.http.get(this.API_URL+"student/"+id);
+    return this.http.get<Student>(this.API_URL+"student/"+id);
 
   }
 

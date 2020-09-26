@@ -1,8 +1,8 @@
 export class Student{
-        id : number=0;
-        name : string='';
-        dob : string='';
-        email : string='';
-        mobile : string='';
+        id?: number =0;
+        name : string='none';
+        dob : string='none';
+        email : string ='none';
+        mobile : string= 'none';
     
 }

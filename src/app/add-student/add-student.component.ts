@@ -10,8 +10,13 @@ import { Student } from '../student.model';
 })
 export class AddStudentComponent implements OnInit {
 
-  student : Student = new Student();
-  
+  student : Student = {
+    id:0,
+    name:'',
+    dob:'',
+    email:'',
+    mobile:''
+  };
   message : any;
   constructor(private service : StudentServiceService,
     private route: ActivatedRoute,

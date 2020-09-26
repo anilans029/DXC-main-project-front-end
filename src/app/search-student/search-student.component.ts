@@ -10,7 +10,13 @@ import { Student } from '../student.model';
 })
 export class SearchStudentComponent implements OnInit {
 
-student : any ;
+  student : Student = {
+    id:0,
+    name:'',
+    dob:'',
+    email:'',
+    mobile:''
+  };
 studentId: number =0;
 showStudentTable : boolean = false;
   constructor(private service: StudentServiceService) { }
@@ -22,7 +28,7 @@ showStudentTable : boolean = false;
     this.showStudentTable = !this.showStudentTable;
     let response = this.service.searchStudent(this.studentId);
     response.subscribe(data => this.student = data);
-    console.log(this.student);
+    
   }
 }
 

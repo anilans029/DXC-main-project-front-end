@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Exam } from '../exam.model';
 import { ExamService } from '../exam.service';
 import { Marks } from '../marks.model';
 import { MarksService } from '../marks.service';
@@ -14,8 +15,8 @@ import { Student } from '../student.model';
 export class UpdateMarksComponent implements OnInit {
 
   marks : any;
-  student : any;
-  exam : any;
+  student : Student = {id:0,name:'',dob:'',email:'',mobile:''};
+  exam : Exam ={ id: 0, exam_name:''};
   sid : any;
   eid : any;
   message : any;
@@ -28,8 +29,10 @@ export class UpdateMarksComponent implements OnInit {
   ngOnInit(): void {
 
     
-    this.eid = this.route.snapshot.params['id'];
-    this.sid = this.route.snapshot.params['id2'];
+    this.eid = this.route.snapshot.params['id2'];
+    this.sid = this.route.snapshot.params['id'];
+    console.log(this.eid+" examid inside update ngonit component");
+    console.log(this.sid+" studentid inside update ngonit component");
     let response =  this.service.listMarksByExamAndStudentId(this.sid,this.eid);
     response.subscribe(data => {
       this.marks = data;
@@ -52,7 +55,7 @@ export class UpdateMarksComponent implements OnInit {
   }
 
   public updateStudentMarks(){
-    this.marks = {} as Marks;
+    console.log(this.marks);
     let response = this.service.updateStudentMarks(this.marks);
     response.subscribe(data => {
       this.message = data

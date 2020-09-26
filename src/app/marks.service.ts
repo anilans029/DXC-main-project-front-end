@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { Marks } from './marks.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,15 +20,15 @@ export class MarksService {
 
 
   public listMarks(){
-    return this.http.get(this.API_URL+"marks");
+    return this.http.get<Marks[]>(this.API_URL+"marks");
   }
 
   public listMarksByExamId(id){
-    return this.http.get(this.API_URL+"mark/"+id);
+    return this.http.get<Marks[]>(this.API_URL+"mark/"+id);
   }
 
   public listMarksByExamAndStudentId(sid,eid){
-    return this.http.get(this.API_URL+"marks/"+sid+"/"+eid);
+    return this.http.get<Marks>(this.API_URL+"marks/"+sid+"/"+eid);
   }
 
   public updateStudentMarks(studentMarks){

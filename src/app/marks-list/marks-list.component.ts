@@ -43,7 +43,8 @@ export class MarksListComponent implements OnInit {
   }
 
 
-  private changeMarks(stdId : any){
+  public changeMarks(stdId : any){
+    
     this.updateMarks(stdId,this.exam_id);
     // this.router.navigate(['update-student',stdId])
 
@@ -51,6 +52,8 @@ export class MarksListComponent implements OnInit {
 
 
   private updateMarks(student_id: number,examId:number){
+    console.log(student_id+" update function student ID");
+    console.log(examId+" update function examID");
     this.router.navigate(['update-marks',student_id,examId])
   }
 

@@ -9,7 +9,14 @@ import { Student } from '../student.model';
   styleUrls: ['./update-student.component.css']
 })
 export class UpdateStudentComponent implements OnInit {
-  student : any;
+  student : Student = {
+    id:0,
+    name:'',
+    dob:'',
+    email:'',
+    mobile:''
+  };
+  
   id : number;
   
   message : any;
@@ -23,7 +30,6 @@ export class UpdateStudentComponent implements OnInit {
     let response =  this.service.searchStudent(this.id);
     response.subscribe(data => {
       this.student = data;
-      console.log(this.student);
     })
     
   }

@@ -21,7 +21,6 @@ export class AddExamComponent implements OnInit {
   ngOnInit(): void {
   }
   public addExam(){
-    console.log(this.exam)
     let response = this.service.addExam(this.exam);
     response.subscribe(data => {
       this.message = data;
